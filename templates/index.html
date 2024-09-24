@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Recommendation System</title>
+    
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='bg.png') }}");
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 50px;
+            color: white;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input, label {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Video Game Recommendation System</h1>
+    <form action="{{ url_for('recommend') }}" method="POST">
+        <label for="game_name">Enter Game Name:</label>
+        <input type="text" id="game_name" name="game_name" required>
+        <br><br>
+
+        <br><br>
+        <button type="submit">Get Recommendations</button>
+    </form>
+</body>
+</html>
